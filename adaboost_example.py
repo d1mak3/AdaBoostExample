@@ -1,5 +1,8 @@
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import AdaBoostRegressor
 from sklearn.metrics import r2_score
+import matplotlib.pyplot as plt
 import pandas as pd
 
 # importing the dataset
@@ -24,9 +27,6 @@ y_data = house.price
 # splitting the dataset
 x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size = 0.3, random_state = 0)
 
-# importing module
-from sklearn.ensemble import AdaBoostRegressor
-
 # Create adaboost regressor with default parameters
 Ada_regressor = AdaBoostRegressor()
 
@@ -35,9 +35,6 @@ AdaBoost_R = Ada_regressor.fit(x_train, y_train)
 
 #Predict price of houses
 AdaBoostR_pred = AdaBoost_R.predict(x_test)
-
-# importing the module
-import matplotlib.pyplot as plt
 
 # fitting the size of the plot
 plt.figure(figsize=(20, 8))
@@ -50,9 +47,6 @@ plt.show()
 
 # Evaluating the model
 print('R-square score is :', r2_score(y_test, AdaBoostR_pred))
-
-# importing required module
-from sklearn.model_selection import GridSearchCV
 
 # initializing the model
 model = AdaBoostRegressor()
