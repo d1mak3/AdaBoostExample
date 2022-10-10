@@ -25,7 +25,7 @@ x_data = house.drop('price', axis=1)
 y_data = house.price
 
 # splitting the dataset
-x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size = 0.3, random_state = 0)
+x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.3, random_state=0)
 
 # Create adaboost regressor with default parameters
 Ada_regressor = AdaBoostRegressor()
@@ -40,8 +40,8 @@ AdaBoostR_pred = AdaBoost_R.predict(x_test)
 plt.figure(figsize=(20, 8))
 
 # plotting the graphs
-plt.plot([i for i in range(len(y_test))],AdaBoostR_pred, label="Predicted values")
-plt.plot([i for i in range(len(y_test))],y_test, label="actual values")
+plt.plot([i for i in range(len(y_test))], AdaBoostR_pred, label="Predicted values")
+plt.plot([i for i in range(len(y_test))], y_test, label="actual values")
 plt.legend()
 plt.show()
 
@@ -61,7 +61,7 @@ grid.fit(x_train,y_train)
 print("The best estimator returned by GridSearch CV is:", grid.best_estimator_)
 
 # Create adaboost regressor with default parameters
-Ada_regressor4 = AdaBoostRegressor(n_estimators=4)
+Ada_regressor4 = AdaBoostRegressor(n_estimators=2)
 
 # Train Adaboost Classifer
 AdaBoost_R4 = Ada_regressor4.fit(x_train, y_train)
