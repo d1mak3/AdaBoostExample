@@ -1,7 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
 import pandas as pd
-import plotly.express as px
 
 # importing the dataset
 house = pd.read_csv("Dushanbe_house.csv")
@@ -17,18 +16,6 @@ house = house.dropna(axis=0, )
 
 # null values
 print(house.isnull().sum())
-
-# plotting scattered plot
-fig = px.scatter(y=house['price'], x=house['area'])
-
-# fig = px.scatter(x=predictions)
-fig.show()
-
-# plotting the graph
-fig = px.scatter(y=house['longitude'], x = house['latitude'])
-
-# showing
-fig.show()
 
 # splitting dataset
 x_data = house.drop('price', axis=1)
