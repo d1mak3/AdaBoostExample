@@ -1,7 +1,5 @@
 from sklearn.model_selection import train_test_split
-from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import AdaBoostRegressor
-from sklearn.metrics import r2_score
 import matplotlib.pyplot as plt
 import pandas as pd
 
