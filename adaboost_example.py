@@ -43,7 +43,7 @@ plt.figure(figsize=(20, 8))
 plt.plot([i for i in range(len(y_test))], AdaBoostR_pred, label="Predicted values")
 plt.plot([i for i in range(len(y_test))], y_test, label="actual values")
 plt.legend()
-plt.show()
+#plt.show()
 
 # Evaluating the model
 print('R-square score is :', r2_score(y_test, AdaBoostR_pred))
@@ -59,6 +59,9 @@ grid.fit(x_train,y_train)
 
 # printing the best estimator
 print("The best estimator returned by GridSearch CV is:", grid.best_estimator_)
+
+# cutting value from the string
+estimator = grid.best_estimator_.__str__()[31:len(grid.best_estimator_.__str__()) - 1]
 
 # Create adaboost regressor with default parameters
 Ada_regressor4 = AdaBoostRegressor(n_estimators=2)
