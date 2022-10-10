@@ -21,8 +21,6 @@ print(house.isnull().sum())
 # shape
 print(house.shape)
 
-
-
 # plotting scattered plot
 fig = px.scatter(y=house['price'], x=house['area'])
 
